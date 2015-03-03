@@ -1,5 +1,5 @@
 Twitter.TweetRoute = Ember.Route.extend({
   model: function(params) {
-    return tweets.findBy('id', params.tweet_id);
+    return this.store.find('tweet', params.tweet_id);
   }
 });

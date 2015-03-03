@@ -1,5 +1,13 @@
 <h1>Tweets</h1>
 
+<form class="form" role="form">
+  <div class="form-group">
+    <label for="tweet">Tweet:</label>
+    {{input id="tweet" class="form-control" value=tweet maxlength="140"}}
+  </div>
+  <button class="btn btn-success" {{action 'save'}}>Tweet!</button>
+</form>
+<hr>
 <ul>
   {{#each}}
   <li>{{#link-to 'tweet' this.id}}{{tweet}}{{/link-to}}</li>
