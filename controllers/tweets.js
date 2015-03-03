@@ -11,6 +11,8 @@ Twitter.TweetsController = Ember.ArrayController.extend({
       });
 
       newTweet.save();
+      var self = this;
+      self.set('tweet', "");
       this.transitionToRoute('tweets');
     }
   }

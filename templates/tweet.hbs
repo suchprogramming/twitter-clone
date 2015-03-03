@@ -1,4 +1,13 @@
 <h1>{{tweet}}</h1>
-<h3>{{handle}}</h3>
 {{date}}
 <button class="btn btn-danger" {{action 'delete'}}>Delete!</button>
+
+<h2>Comments</h2>
+
+{{#each comments}}
+  <p>{{text}}</p>
+{{/each}}
+
+<p>{{#link-to 'new-comment' this.id class="btn btn-default"}}New comment{{/link-to}}</p>
+
+{{outlet}}
