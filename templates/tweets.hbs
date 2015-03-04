@@ -8,8 +8,11 @@
   <button class="btn btn-success" {{action 'save'}}>Tweet!</button>
 </form>
 <hr>
-{{#each}}
-  <div class="row well">
-    <span>{{#link-to 'tweet' this.id}} {{tweet}} {{/link-to}}</span>
+{{#each item in controller}}
+  <div class="row well" {{action 'toggleDate'}}>
+    <span>{{#link-to 'tweet' item.id}} {{item.tweet}} {{/link-to}}</span>
+    {{#if item.isExpanded}}
+      <span class="tweet-stamp">{{item.rawDate}}</span>
+    {{/if}}
   </div>
 {{/each}}
