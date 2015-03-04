@@ -8,12 +8,8 @@
   <button class="btn btn-success" {{action 'save'}}>Tweet!</button>
 </form>
 <hr>
-<ul>
-  {{#each}}
-  <li>{{#link-to 'tweet' this.id}}{{tweet}} {{date}} {{/link-to}}</li>
-  {{/each}}
-</ul>
-
-<!-- <p>
-  <a href="#" {{action 'sortByDate'}}>Sort by date</a>
-</p> -->
+{{#each}}
+  <div class="row well">
+    <span>{{#link-to 'tweet' this.id}} {{tweet}} {{/link-to}}</span>
+  </div>
+{{/each}}

@@ -2,6 +2,7 @@ Twitter.TweetsController = Ember.ArrayController.extend({
 
   sortProperties: ['date'],
   sortAscending: false,
+  isExpanded: false,
 
   actions: {
 
@@ -12,11 +13,16 @@ Twitter.TweetsController = Ember.ArrayController.extend({
         date: new Date(),
         hashtag: myRe.exec(this.get('tweet'))
       });
-      debugger;
+
       newTweet.save();
       var self = this;
       self.set('tweet', "");
       this.transitionToRoute('tweets');
+    },
+
+    toggle: function() {
+      this.set('isExpanded', !this.isExpanded);
+      console.log(this.isExpanded);
     }
   }
 });
